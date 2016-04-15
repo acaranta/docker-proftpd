@@ -4,4 +4,4 @@ echo Setting credentials to $USERNAME
 PASSWORD=$(perl -e 'print crypt($ARGV[0], "password")' $PASSWORD)
 useradd --shell /bin/sh --create-home --password $PASSWORD $USERNAME
 chown -R $USERNAME:$USERNAME /ftp
-exec proftpd --nodaemon -d 20
+exec proftpd --nodaemon -d 10 -S 0.0.0.0
